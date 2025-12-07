@@ -72,7 +72,8 @@ const translations = {
       est: "Est. 2020",
       email: "code4good.idc@gmail.com",
       rights: "Code4Good. All rights reserved.",
-      built: "Built with ❤️ by CS Students"
+      built: "Built with ❤️ by CS Students",
+      followUs: "Want to hear more? Follow us!"
     }
   },
   he: {
@@ -125,7 +126,8 @@ const translations = {
       est: "נוסד 2020",
       email: "code4good.idc@gmail.com",
       rights: "Code4Good. כל הזכויות שמורות.",
-      built: "נבנה עם ❤️ על ידי סטודנטים למדעי המחשב"
+      built: "נבנה עם ❤️ על ידי סטודנטים למדעי המחשב",
+      followUs: "רוצים לשמוע עוד? עקבו אחרינו!"
     }
   }
 };
@@ -218,7 +220,7 @@ const projectsData = [
     imageUrl: "/images/orgs/heroes_for_life.webp",
     content: {
       en: {
-        title: "Fighters Without Borders",
+        title: "Heroes for Life",
         description: "Lack of data visibility made it hard to make strategic decisions about missions and volunteers.",
         solution: "An advanced Grafana Dashboard that visualizes organization data for recruitment and mission planning.",
         tech: ["Grafana", "Data Viz", "BI"]
@@ -304,7 +306,7 @@ const managersData = [
   { 
     name: { en: "Maayan Levy", he: "מעיין לוי" },
     title: { en: "Program Manager", he: "מנהלת תוכנית" },
-    photo: "/images/orgs/The_Mother_of_the_Lone_Soldiers.avif",
+    photo: "/images/orgs/maayan_levi.jpeg",
     linkedin: "https://www.linkedin.com/in/maayan-levi-418770273/"
   },
   { 
@@ -321,7 +323,7 @@ const Logo = () => {
   const [imgError, setImgError] = React.useState(false);
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-3">
       {!imgError ? (
         <img 
           src="/images/orgs/logo.png" 
@@ -340,6 +342,15 @@ const Logo = () => {
           </svg>
         </div>
       )}
+      <a 
+        href="https://www.linkedin.com/company/code4good-il/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-[#0077b5] transition-colors"
+        aria-label="LinkedIn"
+      >
+        <Linkedin size={22} />
+      </a>
     </div>
   );
 };
@@ -724,6 +735,46 @@ export default function App() {
                   {t.footer.email}
                 </a>
               </p>
+            </div>
+
+            {/* Social Media Section */}
+            <div className={`text-center ${isRTL ? 'md:text-left' : 'md:text-right'}`}>
+              <p className="text-sm text-slate-300 mb-3">{t.footer.followUs}</p>
+              <div className="flex items-center justify-center gap-4">
+                <a 
+                  href="https://www.linkedin.com/company/code4good-il/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-[#0077b5] transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} />
+                </a>
+                <a 
+                  href="https://www.instagram.com/code4good_il/?igsh=MW5leGxucmU5dGJwOQ%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-[#E4405F] transition-colors"
+                  aria-label="Instagram"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://www.facebook.com/p/Code4good-100075953242095/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-[#1877F2] transition-colors"
+                  aria-label="Facebook"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
             
             <div className={`text-center ${isRTL ? 'md:text-left' : 'md:text-right'}`}>
