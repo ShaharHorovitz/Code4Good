@@ -517,7 +517,7 @@ export default function App() {
           <div className="flex justify-between items-center">
             <Logo />
             
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center gap-8">
               <NavLink href="#about">{t.nav.about}</NavLink>
               <NavLink href="#current-projects">{t.nav.current}</NavLink>
               <NavLink href="#portfolio">{t.nav.portfolio}</NavLink>
